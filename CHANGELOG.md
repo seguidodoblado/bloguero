@@ -5,6 +5,12 @@ en este archivo.
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-10-01
+
+### Fixed
+
+- El panel izquierdo (lista de entradas) crecía a la mitad de la ventana al maximizarla, en vez de quedarse en su ancho mínimo; ahora el `Gtk.Paned` deja todo el espacio extra al editor
+
 ## [0.1.1] - 2026-10-01
 
 ### Fixed

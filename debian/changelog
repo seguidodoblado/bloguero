@@ -1,3 +1,10 @@
+bloguero (0.1.2-1) noble; urgency=medium
+
+  * Arregla el panel izquierdo (lista de entradas), que crecía a la
+    mitad de la ventana al maximizarla.
+
+ -- Jose Antonio Seguido Doblado <jose.antonio.seguido@gmail.com>  Thu, 01 Oct 2026 23:48:19 +0200
+
 bloguero (0.1.1-1) noble; urgency=medium
 
   * Arregla el reinicio tras aplicar preferencias (fallaba en el .deb
