@@ -5,6 +5,12 @@ en este archivo.
 
 ## [Unreleased]
 
+## [0.1.5] - 2026-10-02
+
+### Removed
+
+- `ui/markdown_toolbar.py`: módulo sin usar por la app, mantenido solo como referencia reutilizable para otros proyectos; Telegraph Writer ya implementó su propio `build_markdown_toolbar()` con el mismo patrón, así que cumplió su propósito
+
 ## [0.1.4] - 2026-10-01
 
 ### Fixed

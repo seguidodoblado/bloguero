@@ -1,3 +1,10 @@
+bloguero (0.1.5-1) noble; urgency=medium
+
+  * Quita ui/markdown_toolbar.py, módulo sin usar por la app y ya
+    implementado como referencia en Telegraph Writer.
+
+ -- Jose Antonio Seguido Doblado <jose.antonio.seguido@gmail.com>  Fri, 02 Oct 2026 01:31:23 +0200
+
 bloguero (0.1.4-1) noble; urgency=medium
 
   * Quita la clase success de Guardar borrador, que Mint-Y no estiliza y
