@@ -25,63 +25,10 @@ cuenta de Google y tu propio proyecto en Google Cloud.
 - **Interfaz en español e inglés** (gettext), e **idioma y tema (claro/oscuro) configurables** desde
   Preferencias, siguiendo el tema del sistema por defecto.
 
-## Instalación
+## Documentación
 
-### 1. Proyecto en Google Cloud
-
-Blogger no tiene una app pública: cada persona necesita su propio cliente OAuth.
-
-1. Crea un proyecto en [Google Cloud Console](https://console.cloud.google.com/projectcreate) y activa
-   la **Blogger API**.
-2. Configura la pantalla de consentimiento OAuth (tipo *Externos*, con tu cuenta como usuario de
-   prueba) y añade el scope `https://www.googleapis.com/auth/blogger`.
-3. Crea un cliente OAuth de tipo **App de escritorio** y descarga el JSON de credenciales.
-4. Guárdalo como `~/.config/bloguero/client_secret.json`.
-
-### 2. El paquete `.deb`
-
-```sh
-git clone https://github.com/seguidodoblado/bloguero.git
-cd bloguero
-./build-deb.sh
-sudo apt install ./bloguero_*.deb
-```
-
-El `.deb` resuelve sus dependencias vía `apt` (GTK 4, PyGObject, clientes de Google, etc.); no hace
-falta `pip` ni un entorno virtual para usar la aplicación ya instalada.
-
-## Uso
-
-Al abrir Bloguero por primera vez, pulsa **Conectar con Google** y acepta el consentimiento OAuth (verás
-un aviso de "app no verificada" mientras el proyecto esté en modo de prueba; es normal, acéptalo).
-A partir de ahí, la lista de blogs y entradas se recuerda y la app vuelve a conectarse sola en los
-siguientes arranques.
-
-## Desarrollo
-
-```sh
-git clone https://github.com/seguidodoblado/bloguero.git
-cd bloguero
-python3 -m venv --system-site-packages .venv   # --system-site-packages: necesita el PyGObject del sistema
-source .venv/bin/activate
-pip install -e ".[dev]"
-
-pytest                 # tests
-python -m bloguero.app # ejecutar desde el código fuente
-```
-
-### Traducciones
-
-El código fuente está en español (`_("texto")` con `gettext`). Para añadir o actualizar traducciones:
-
-```sh
-./i18n-extract.sh   # regenera po/bloguero.pot y actualiza po/*.po
-# traduce las cadenas nuevas/fuzzy a mano en po/<idioma>.po
-./i18n-compile.sh   # compila a .mo para probarlo
-LANGUAGE=en python -m bloguero.app
-```
-
-Más detalle en [`po/README.md`](po/README.md).
+Toda la documentación —instalación, guía de uso, especificaciones técnicas, solución de problemas y más— está en
+la **[wiki del proyecto](https://github.com/seguidodoblado/bloguero/wiki)** (español e inglés).
 
 ## Licencia
 
