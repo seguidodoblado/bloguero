@@ -5,6 +5,12 @@ en este archivo.
 
 ## [Unreleased]
 
+## [0.1.4] - 2026-10-01
+
+### Fixed
+
+- Quita la clase `success` de "Guardar borrador": Mint-Y no la estiliza para botones (ni la define ninguna hoja de estilo del tema), así que no tenía ningún efecto visual; el botón se queda neutro. "Publicar"/"Programar" sigue en verde (`suggested-action`, el color de acción principal en Mint-Y) y "Borrar" en rojo
+
 ## [0.1.3] - 2026-10-01
 
 ### Changed
