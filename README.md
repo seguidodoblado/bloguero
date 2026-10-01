@@ -4,7 +4,15 @@
 
 <h1 align="center">Bloguero</h1>
 
-![release](https://img.shields.io/github/v/release/seguidodoblado/bloguero) ![license](https://img.shields.io/github/license/seguidodoblado/bloguero) ![last commit](https://img.shields.io/github/last-commit/seguidodoblado/bloguero) ![downloads](https://img.shields.io/github/downloads/seguidodoblado/bloguero/total) ![stars](https://img.shields.io/github/stars/seguidodoblado/bloguero?style=flat) ![issues](https://img.shields.io/github/issues/seguidodoblado/bloguero) ![language](https://img.shields.io/github/languages/top/seguidodoblado/bloguero)
+<p align="center">
+  <img src="https://img.shields.io/github/v/release/seguidodoblado/bloguero" alt="release">
+  <img src="https://img.shields.io/github/license/seguidodoblado/bloguero" alt="license">
+  <img src="https://img.shields.io/github/last-commit/seguidodoblado/bloguero" alt="last commit">
+  <img src="https://img.shields.io/github/downloads/seguidodoblado/bloguero/total" alt="downloads">
+  <img src="https://img.shields.io/github/stars/seguidodoblado/bloguero?style=flat" alt="stars">
+  <img src="https://img.shields.io/github/issues/seguidodoblado/bloguero" alt="issues">
+  <img src="https://img.shields.io/github/languages/top/seguidodoblado/bloguero" alt="language">
+</p>
 
 <p align="center">
   Cliente de escritorio para Blogger: gestiona tus entradas sin pasar por el navegador.
