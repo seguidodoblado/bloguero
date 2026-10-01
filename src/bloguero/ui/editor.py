@@ -84,7 +84,6 @@ class EditorView(Gtk.Box):
         new_btn = Gtk.Button(label=_("Nueva entrada"))
         new_btn.connect("clicked", lambda _btn: on_new())
         save_btn = Gtk.Button(label=_("Guardar borrador"))
-        save_btn.add_css_class("success")
         save_btn.connect("clicked", lambda _btn: on_save_draft())
         self._publish_btn = Gtk.Button(label=_("Publicar"))
         self._publish_btn.add_css_class("suggested-action")
