@@ -1,6 +1,8 @@
 bloguero (0.1.0-1) unstable; urgency=low
 
   * Versión inicial: login OAuth, listar/crear/editar/publicar/borrar
-    entradas, editor en Markdown, caché SQLite local.
+    entradas, editor enriquecido (WYSIWYG) nativo en GTK, programación de
+    publicación, caché SQLite local con detección de conflictos,
+    interfaz en español e inglés, y preferencias de idioma y tema.
 
- -- Jose Antonio Seguido Doblado <jose.antonio.seguido@gmail.com>  Thu, 01 Oct 2026 11:30:00 +0200
+ -- Jose Antonio Seguido Doblado <jose.antonio.seguido@gmail.com>  Thu, 01 Oct 2026 21:30:12 +0200

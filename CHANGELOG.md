@@ -5,6 +5,8 @@ en este archivo.
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-10-01
+
 ### Added
 
 - Estructura inicial del proyecto: paquete `bloguero` (auth, api, models, store, convert, ui) y tests básicos
@@ -18,11 +20,3 @@ en este archivo.
 - Editor enriquecido (WYSIWYG) nativo en GTK (negrita, cursiva, subrayado, tachado, título H1/H2, listas, cita, código, enlace, color de texto), en `ui/rich_text.py` — serializa directamente a/desde el HTML que espera la API de Blogger, sin Markdown de por medio; reutilizable en otros proyectos (solo depende de `Gtk.TextView`)
 - Traducción al inglés (i18n real con `gettext`): toda la interfaz pasa por `_()`, catálogo `po/en.po`, scripts `i18n-extract.sh`/`i18n-compile.sh` y compilación automática al empaquetar
 - Preferencias de idioma y tema (botón de engranaje en la cabecera): selector Sistema/Español/English y Sistema/Claro/Oscuro, persistidos en `~/.config/bloguero/settings.json` y aplicados reiniciando la app (el tema deriva la variante clara/oscura del tema GTK activo preservando el acento, como en Telegraph Writer)
-
-### Changed
-
-- 
-
-### Fixed
-
-- 

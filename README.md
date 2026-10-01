@@ -22,7 +22,8 @@ cuenta de Google y tu propio proyecto en Google Cloud.
 - **Caché local y trabajo sin conexión**: la lista carga al instante desde SQLite, los cambios sin
   guardar se conservan aunque cierres la app, y si una entrada cambió en Blogger mientras la editabas
   se te avisa antes de sobrescribirla.
-- **Interfaz en español e inglés** (gettext).
+- **Interfaz en español e inglés** (gettext), e **idioma y tema (claro/oscuro) configurables** desde
+  Preferencias, siguiendo el tema del sistema por defecto.
 
 ## Instalación
 
