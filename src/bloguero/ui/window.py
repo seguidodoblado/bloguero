@@ -104,7 +104,9 @@ class MainWindow(Gtk.ApplicationWindow):
             on_dirty=self._on_editor_dirty,
         )
         paned.set_end_child(self._editor)
-        paned.set_resize_start_child(True)
+        # El panel izquierdo se queda en su ancho fijo (position) al redimensionar la
+        # ventana (p. ej. al maximizar); todo el espacio extra va al editor.
+        paned.set_resize_start_child(False)
         paned.set_resize_end_child(True)
         paned.set_shrink_start_child(False)
         paned.set_position(280)
