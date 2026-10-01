@@ -1,0 +1,3 @@
+#!/bin/bash
+export PYTHONPATH=/opt/bloguero
+exec -a bloguero python3 -m bloguero.app "$@"

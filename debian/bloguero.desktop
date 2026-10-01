@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Bloguero
+Comment=Cliente de escritorio para Blogger
+Exec=/usr/bin/bloguero
+Icon=bloguero
+StartupWMClass=bloguero
+Type=Application
+Categories=Office;
+Terminal=false

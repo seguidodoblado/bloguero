@@ -1,0 +1,234 @@
+# English translations for bloguero package.
+# Copyright (C) 2026 Jose Antonio Seguido Doblado
+# This file is distributed under the same license as the bloguero package.
+# Jose Antonio Seguido Doblado <jose.antonio.seguido@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bloguero 0.1.0\n"
+"Report-Msgid-Bugs-To: jose.antonio.seguido@gmail.com\n"
+"POT-Creation-Date: 2026-10-01 16:25+0200\n"
+"PO-Revision-Date: 2026-10-01 16:23+0200\n"
+"Last-Translator: Jose Antonio Seguido Doblado <jose.antonio.seguido@gmail."
+"com>\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/auth.py:40
+msgid "El token guardado ya no es válido, inicia sesión de nuevo"
+msgstr "The saved token is no longer valid, sign in again"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/auth.py:56
+#, python-brace-format
+msgid ""
+"Falta el cliente OAuth de escritorio en {path}. Descárgalo desde Google "
+"Cloud Console."
+msgstr ""
+"Desktop OAuth client missing at {path}. Download it from Google Cloud "
+"Console."
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/editor.py:45
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/post_list.py:63
+msgid "Título"
+msgstr "Title"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/editor.py:49
+msgid "Título de la entrada"
+msgstr "Entry title"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/editor.py:53
+msgid "Etiquetas (separadas por comas)"
+msgstr "Labels (comma-separated)"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/editor.py:61
+msgid "Cuerpo"
+msgstr "Body"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/editor.py:84
+msgid "Nueva entrada"
+msgstr "New entry"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/editor.py:86
+msgid "Guardar borrador"
+msgstr "Save draft"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/editor.py:88
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/editor.py:147
+msgid "Publicar"
+msgstr "Publish"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/editor.py:90
+msgid "Volver a borrador"
+msgstr "Revert to draft"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/editor.py:93
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:364
+msgid "Borrar"
+msgstr "Delete"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/editor.py:106
+msgid "Programar publicación"
+msgstr "Schedule publication"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/editor.py:126
+msgid "Hora:"
+msgstr "Time:"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/editor.py:147
+msgid "Programar"
+msgstr "Schedule"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/editor.py:201
+msgid ""
+"Selecciona una entrada de la lista\n"
+"o pulsa «Nueva entrada» para escribir una"
+msgstr ""
+"Select an entry from the list\n"
+"or click “New entry” to write one"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/login.py:34
+msgid "Conectar con Google"
+msgstr "Connect with Google"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/post_list.py:20
+msgid "Publicadas"
+msgstr "Published"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/post_list.py:21
+msgid "Borradores"
+msgstr "Drafts"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/post_list.py:22
+msgid "Programadas"
+msgstr "Scheduled"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/rich_text.py:106
+msgid "Negrita"
+msgstr "Bold"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/rich_text.py:107
+msgid "Cursiva"
+msgstr "Italic"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/rich_text.py:108
+msgid "Subrayado"
+msgstr "Underline"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/rich_text.py:109
+msgid "Tachado"
+msgstr "Strikethrough"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/rich_text.py:114
+msgid "Título: H1 / H2 / normal"
+msgstr "Heading: H1 / H2 / normal"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/rich_text.py:117
+msgid "Lista con viñetas"
+msgstr "Bulleted list"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/rich_text.py:122
+msgid "Lista numerada"
+msgstr "Numbered list"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/rich_text.py:127
+msgid "Cita"
+msgstr "Quote"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/rich_text.py:130
+msgid "Código"
+msgstr "Code"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/rich_text.py:131
+msgid "Enlace"
+msgstr "Link"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/rich_text.py:135
+msgid "Color de texto"
+msgstr "Text color"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/rich_text.py:258
+msgid "Insertar"
+msgstr "Insert"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:54
+msgid "No has iniciado sesión: mostrando datos guardados localmente."
+msgstr "You're not signed in: showing locally saved data."
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:104
+msgid "Sin conexión: mostrando datos guardados localmente."
+msgstr "Offline: showing locally saved data."
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:153
+msgid "Sin conexión y sin datos locales guardados."
+msgstr "Offline, and no local data saved."
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:234
+msgid "Sin conexión"
+msgstr "Offline"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:236
+msgid ""
+"No se puede guardar en Blogger ahora mismo. Tus cambios siguen a salvo en "
+"este equipo; vuelve a intentarlo cuando tengas conexión."
+msgstr ""
+"Can't save to Blogger right now. Your changes are still safe on this "
+"computer; try again once you're back online."
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:269
+msgid "Se editó en otro sitio después de que la abrieras aquí."
+msgstr "It was edited somewhere else after you opened it here."
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:270
+msgid "Tu versión"
+msgstr "Your version"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:271
+msgid "Versión en Blogger"
+msgstr "Version on Blogger"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:274
+msgid "Esta entrada cambió en Blogger"
+msgstr "This entry changed on Blogger"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:279
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:364
+msgid "Cancelar"
+msgstr "Cancel"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:279
+msgid "Usar la de Blogger"
+msgstr "Use the Blogger version"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:279
+msgid "Mantener la mía"
+msgstr "Keep mine"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:309
+msgid "No se pudo guardar"
+msgstr "Couldn't save"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:328
+msgid "No se pudo publicar"
+msgstr "Couldn't publish"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:344
+msgid "No se pudo volver a borrador"
+msgstr "Couldn't revert to draft"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:358
+msgid "Borrar entrada"
+msgstr "Delete entry"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:360
+#, python-brace-format
+msgid "¿Seguro que quieres borrar «{title}»? Esta acción no se puede deshacer."
+msgstr ""
+"Are you sure you want to delete “{title}”? This action can't be undone."
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:380
+msgid "No se pudo borrar"
+msgstr "Couldn't delete"

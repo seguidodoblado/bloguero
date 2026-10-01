@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bloguero"
+version = "0.1.0"
+description = "Cliente de escritorio para Blogger"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+requires-python = ">=3.11"
+authors = [
+    { name = "Jose Antonio Seguido Doblado" },
+]
+dependencies = [
+    "PyGObject>=3.46",
+    "google-api-python-client>=2.100",
+    "google-auth-oauthlib>=1.2",
+    "google-auth>=2.30",
+    "keyring>=25.0",
+    "markdown>=3.6",
+    "html2text>=2024.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+bloguero = "bloguero.app:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bloguero"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
