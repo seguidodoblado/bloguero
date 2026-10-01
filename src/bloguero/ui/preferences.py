@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-import os
-import sys
+import subprocess
 
 import gi
 
@@ -35,6 +34,7 @@ class PreferencesWindow(Gtk.Window):
             modal=True,
             resizable=False,
         )
+        self._application = application
         config = settings.read_settings()
 
         box = Gtk.Box(
@@ -83,4 +83,18 @@ class PreferencesWindow(Gtk.Window):
         config["language"] = _LANGUAGE_CODES[self._language_dropdown.get_selected()]
         config["dark_mode"] = _THEME_VALUES[self._theme_dropdown.get_selected()]
         settings.write_settings(config)
-        os.execv(sys.executable, [sys.executable, "-m", "bloguero.app"])
+        # Un exec-in-place (os.execv) conserva el PID y, con él, los descriptores de
+        # fichero abiertos: la conexión D-Bus donde esta app ya está registrada como
+        # instancia única sigue "viva" para el bus, así que el proceso reaparecido se
+        # ve a sí mismo como instancia secundaria y se cierra sin mostrar ventana.
+        # Lanzar un proceso de verdad aparte y cerrar este con quit() evita el problema.
+        #
+        # El ejecutable se toma de /proc/self/exe, no de sys.executable: el lanzador
+        # instalado hace "exec -a bloguero python3 -m bloguero.app" para que el icono
+        # del dock salga bien, y ese "-a" engaña a sys.executable (apunta al propio
+        # script /usr/bin/bloguero en vez de al intérprete real); /proc/self/exe
+        # resuelve siempre al binario de verdad, venga o no de un venv.
+        subprocess.Popen(
+            ["/proc/self/exe", "-m", "bloguero.app"], start_new_session=True
+        )
+        self._application.quit()

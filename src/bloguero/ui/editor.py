@@ -103,9 +103,13 @@ class EditorView(Gtk.Box):
     def _build_schedule_box(self) -> Gtk.Widget:
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
 
-        self._schedule_check = Gtk.CheckButton(label=_("Programar publicación"))
-        self._schedule_check.connect("toggled", self._on_schedule_toggled)
+        # Switch en vez de CheckButton: el indicador de color siempre visible no
+        # depende del contraste del borde del tema (en Mint-Y-Dark el del check
+        # queda casi invisible).
+        self._schedule_check = Gtk.Switch(valign=Gtk.Align.CENTER)
+        self._schedule_check.connect("notify::active", self._on_schedule_toggled)
         box.append(self._schedule_check)
+        box.append(Gtk.Label(label=_("Programar publicación")))
 
         self._schedule_button = Gtk.MenuButton(sensitive=False)
         popover = Gtk.Popover()
@@ -141,7 +145,7 @@ class EditorView(Gtk.Box):
         self._update_schedule_label()
         return box
 
-    def _on_schedule_toggled(self, _check: Gtk.CheckButton) -> None:
+    def _on_schedule_toggled(self, _switch: Gtk.Switch, _pspec) -> None:
         active = self._schedule_check.get_active()
         self._schedule_button.set_sensitive(active)
         self._publish_btn.set_label(_("Programar") if active else _("Publicar"))
