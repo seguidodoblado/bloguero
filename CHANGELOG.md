@@ -5,6 +5,13 @@ en este archivo.
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-01
+
+### Fixed
+
+- El botón "Aplicar y reiniciar" de Preferencias no volvía a mostrar ventana en el `.deb` instalado: `sys.executable` quedaba apuntando al propio lanzador (`exec -a bloguero python3 ...` renombra `argv[0]`), así que el relanzamiento ejecutaba `/usr/bin/bloguero -m bloguero.app`, que esa app no reconocía como opción propia y se cerraba sola. Ahora se relanza desde `/proc/self/exe`, inmune a ese renombrado, lanzando un proceso nuevo de verdad y cerrando el actual con `quit()`
+- El interruptor de "Programar publicación" (antes una casilla `Gtk.CheckButton`) apenas se distinguía en tema oscuro (Mint-Y-Dark): se sustituye por un `Gtk.Switch`, con indicador de color siempre visible
+
 ## [0.1.0] - 2026-10-01
 
 ### Added

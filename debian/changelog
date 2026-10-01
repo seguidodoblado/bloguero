@@ -1,3 +1,11 @@
+bloguero (0.1.1-1) noble; urgency=medium
+
+  * Arregla el reinicio tras aplicar preferencias (fallaba en el .deb
+    instalado) y la visibilidad del interruptor de programar publicación
+    en tema oscuro.
+
+ -- Jose Antonio Seguido Doblado <jose.antonio.seguido@gmail.com>  Thu, 01 Oct 2026 21:58:28 +0200
+
 bloguero (0.1.0-1) unstable; urgency=low
 
   * Versión inicial: login OAuth, listar/crear/editar/publicar/borrar
