@@ -5,6 +5,12 @@ en este archivo.
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-10-01
+
+### Changed
+
+- Botones del editor con color según su peso: "Guardar borrador" en verde (`success`), "Publicar"/"Programar" en azul (`suggested-action`); "Nueva entrada" y "Volver a borrador" se quedan neutros, "Borrar" sigue en rojo
+
 ## [0.1.2] - 2026-10-01
 
 ### Fixed
