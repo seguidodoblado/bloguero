@@ -21,6 +21,15 @@ class MainWindow(Gtk.ApplicationWindow):
     def __init__(self, application: Gtk.Application) -> None:
         super().__init__(application=application, title="Bloguero", default_width=900, default_height=600)
 
+        header = Gtk.HeaderBar()
+        header.set_title_widget(Gtk.Label(label="Bloguero"))
+        preferences_button = Gtk.Button(
+            icon_name="preferences-system-symbolic", tooltip_text=_("Preferencias")
+        )
+        preferences_button.connect("clicked", lambda _btn: self._open_preferences())
+        header.pack_end(preferences_button)
+        self.set_titlebar(header)
+
         self._store = Store()
         self._client: BloggerClient | None = None
         self._blogs: list[Blog] = []
@@ -54,6 +63,11 @@ class MainWindow(Gtk.ApplicationWindow):
             self._set_offline(True, _("No has iniciado sesión: mostrando datos guardados localmente."))
         else:
             self._stack.set_visible_child_name("login")
+
+    def _open_preferences(self) -> None:
+        from bloguero.ui.preferences import PreferencesWindow
+
+        PreferencesWindow(self.get_application()).present()
 
     def _build_loading_view(self) -> Gtk.Widget:
         box = Gtk.Box(
