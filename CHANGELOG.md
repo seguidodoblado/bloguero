@@ -5,6 +5,8 @@ en este archivo.
 
 ## [Unreleased]
 
+## [0.1.6] - 2026-10-04
+
 ### Added
 
 - Ventana «Acerca de» estándar de GNOME (versión, licencia, autoría y enlace al proyecto), accesible desde un nuevo menú hamburguesa en la cabecera que también agrupa "Preferencias"

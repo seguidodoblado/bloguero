@@ -1,3 +1,10 @@
+bloguero (0.1.6-1) noble; urgency=medium
+
+  * Add the standard GNOME About window, reachable from a new header
+    menu that also groups Preferences; its strings are translated.
+
+ -- Jose Antonio Seguido Doblado <jose.antonio.seguido@gmail.com>  Sun, 04 Oct 2026 14:09:32 +0200
+
 bloguero (0.1.5-1) noble; urgency=medium
 
   * Quita ui/markdown_toolbar.py, módulo sin usar por la app y ya
