@@ -5,6 +5,15 @@ en este archivo.
 
 ## [Unreleased]
 
+### Changed
+
+- Empaquetado conforme a Debian: la aplicación se instala en `/usr/share/bloguero` (antes en `/opt/bloguero`), con fichero `copyright`, `changelog.Debian.gz`, páginas de manual en inglés y español y `md5sums`; el `.deb` pasa lintian sin errores
+- Se añade `ruff` al proyecto (línea de 100, Python 3.11) y `pytest` encuentra el código sin instalarlo; las capturas de excepciones amplias de la interfaz llevan su motivo
+
+### Added
+
+- Integración continua (`ci.yml`: ruff, pytest y `.deb` con lintian) y despliegue (`cd.yml`: al subir una etiqueta `vX.Y.Z` ejecuta el CI sobre ese commit y, solo si pasa, deja la release en borrador con el mismo `.deb` que construyó el CI)
+
 ## [0.1.7] - 2026-10-04
 
 ### Changed

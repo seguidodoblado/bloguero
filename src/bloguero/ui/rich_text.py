@@ -9,9 +9,9 @@ poder copiarse tal cual a otro proyecto (p. ej. telegraph-writer).
 from __future__ import annotations
 
 import html as html_lib
+from collections.abc import Callable
 from gettext import gettext as _
 from html.parser import HTMLParser
-from typing import Callable
 
 import gi
 
@@ -292,7 +292,7 @@ class RichTextEditor(Gtk.Box):
     def _on_color_chosen(self, dialog: Gtk.ColorDialog, result, start_off: int, end_off: int) -> None:
         try:
             rgba = dialog.choose_rgba_finish(result)
-        except Exception:
+        except Exception:  # noqa: BLE001 - si se cancela o falla el selector de color, no se aplica nada
             return
         tag = self.buffer.create_tag(None, foreground_rgba=rgba)
         self.buffer.apply_tag(
@@ -452,9 +452,7 @@ def _wrap_inline(text: str, tags: list[Gtk.TextTag]) -> str:
         elif name is None:
             rgba = tag.get_property("foreground-rgba")
             if rgba is not None:
-                color = "#{:02x}{:02x}{:02x}".format(
-                    round(rgba.red * 255), round(rgba.green * 255), round(rgba.blue * 255)
-                )
+                color = f"#{round(rgba.red * 255):02x}{round(rgba.green * 255):02x}{round(rgba.blue * 255):02x}"
 
     result = escaped
     if code:

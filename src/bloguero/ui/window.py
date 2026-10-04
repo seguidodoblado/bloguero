@@ -187,7 +187,7 @@ class MainWindow(Gtk.ApplicationWindow):
         except auth.AuthError as exc:
             GLib.idle_add(self._on_login_error, str(exc))
             return
-        except Exception:
+        except Exception:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
             GLib.idle_add(self._on_login_offline)
             return
 
@@ -235,7 +235,7 @@ class MainWindow(Gtk.ApplicationWindow):
             return
         try:
             posts = self._client.list_posts(self._current_blog.id)
-        except Exception:
+        except Exception:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
             GLib.idle_add(self._set_offline, True, "")
             return
         GLib.idle_add(self._apply_fetched_posts, posts)
@@ -258,7 +258,7 @@ class MainWindow(Gtk.ApplicationWindow):
             return
         try:
             posts = self._client.list_posts(self._current_blog.id)
-        except Exception:
+        except Exception:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
             self._set_offline(True)
             return
         self._apply_fetched_posts(posts)
@@ -304,7 +304,7 @@ class MainWindow(Gtk.ApplicationWindow):
     def _has_remote_conflict(self, local_post: Post) -> bool:
         try:
             server_post = self._client.get_post(self._current_blog.id, local_post.id)
-        except Exception:
+        except Exception:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
             return False
 
         if not local_post.updated or not server_post.updated:
@@ -337,7 +337,7 @@ class MainWindow(Gtk.ApplicationWindow):
     def _on_conflict_resolved(self, dialog: Gtk.AlertDialog, result, server_post: Post) -> None:
         try:
             choice = dialog.choose_finish(result)
-        except Exception:
+        except Exception:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
             return
 
         if choice == 1:
@@ -358,7 +358,7 @@ class MainWindow(Gtk.ApplicationWindow):
                 post = self._client.update_post(
                     self._current_blog.id, self._current_post.id, title, html, labels=labels
                 )
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
             self._show_message(_("No se pudo guardar"), str(exc))
             return None
 
@@ -377,7 +377,7 @@ class MainWindow(Gtk.ApplicationWindow):
             published = self._client.publish_post(
                 self._current_blog.id, post.id, publish_date=scheduled_at
             )
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
             self._show_message(_("No se pudo publicar"), str(exc))
             return
 
@@ -393,7 +393,7 @@ class MainWindow(Gtk.ApplicationWindow):
 
         try:
             reverted = self._client.revert_post(self._current_blog.id, self._current_post.id)
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
             self._show_message(_("No se pudo volver a borrador"), str(exc))
             return
 
@@ -422,14 +422,14 @@ class MainWindow(Gtk.ApplicationWindow):
     def _on_delete_confirmed(self, dialog: Gtk.AlertDialog, result) -> None:
         try:
             choice = dialog.choose_finish(result)
-        except Exception:
+        except Exception:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
             return
         if choice != 1 or not self._client or not self._current_blog or not self._current_post:
             return
 
         try:
             self._client.delete_post(self._current_blog.id, self._current_post.id)
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
             self._show_message(_("No se pudo borrar"), str(exc))
             return
 
