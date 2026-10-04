@@ -5,8 +5,11 @@ en este archivo.
 
 ## [Unreleased]
 
+## [0.1.8] - 2026-10-04
+
 ### Changed
 
+- El menú principal de la cabecera muestra iconos del sistema junto a «Preferencias» y «Acerca de Bloguero»
 - Empaquetado conforme a Debian: la aplicación se instala en `/usr/share/bloguero` (antes en `/opt/bloguero`), con fichero `copyright`, `changelog.Debian.gz`, páginas de manual en inglés y español y `md5sums`; el `.deb` pasa lintian sin errores
 - Se añade `ruff` al proyecto (línea de 100, Python 3.11) y `pytest` encuentra el código sin instalarlo; las capturas de excepciones amplias de la interfaz llevan su motivo
 
