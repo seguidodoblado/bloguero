@@ -5,6 +5,10 @@ en este archivo.
 
 ## [Unreleased]
 
+### Fixed
+
+- Sin sesión guardada pero con datos en la caché, la aplicación solo mostraba esos datos sin ofrecer cómo iniciar sesión. El aviso «No has iniciado sesión» lleva ahora un botón «Conectar con Google»; si el intento falla por falta de red, el botón sigue disponible para reintentarlo
+
 ## [0.1.8] - 2026-10-04
 
 ### Changed

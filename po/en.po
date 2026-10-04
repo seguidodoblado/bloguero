@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bloguero 0.1.0\n"
 "Report-Msgid-Bugs-To: jose.antonio.seguido@gmail.com\n"
-"POT-Creation-Date: 2026-10-04 14:44+0200\n"
+"POT-Creation-Date: 2026-10-05 00:17+0200\n"
 "PO-Revision-Date: 2026-10-01 16:23+0200\n"
 "Last-Translator: José Antonio Seguido Doblado <jose.antonio.seguido@gmail."
 "com>\n"
@@ -66,7 +66,7 @@ msgid "Volver a borrador"
 msgstr "Revert to draft"
 
 #: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/editor.py:94
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:417
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:452
 msgid "Borrar"
 msgstr "Delete"
 
@@ -91,6 +91,7 @@ msgstr ""
 "or click “New entry” to write one"
 
 #: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/login.py:34
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:147
 msgid "Conectar con Google"
 msgstr "Connect with Google"
 
@@ -112,7 +113,7 @@ msgid "Sistema"
 msgstr "System"
 
 #: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/preferences.py:32
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:78
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:80
 msgid "Preferencias"
 msgstr "Preferences"
 
@@ -188,43 +189,43 @@ msgstr "Text color"
 msgid "Insertar"
 msgstr "Insert"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:60
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:62
 msgid "No has iniciado sesión: mostrando datos guardados localmente."
 msgstr "You're not signed in: showing locally saved data."
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:79
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:85
 msgid "Acerca de Bloguero"
 msgstr "About Bloguero"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:82
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:103
 msgid "Menú principal"
 msgstr "Main menu"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:99
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:120
 msgid "Cliente de escritorio para Blogger"
 msgstr "Desktop client for Blogger"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:101
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:122
 msgid "github.com/seguidodoblado/bloguero"
 msgstr ""
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:105
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:126
 msgid "translator-credits"
 msgstr "José Antonio Seguido Doblado <jose.antonio.seguido@gmail.com>"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:157
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:181
 msgid "Sin conexión: mostrando datos guardados localmente."
 msgstr "Offline: showing locally saved data."
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:206
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:241
 msgid "Sin conexión y sin datos locales guardados."
 msgstr "Offline, and no local data saved."
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:287
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:322
 msgid "Sin conexión"
 msgstr "Offline"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:289
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:324
 msgid ""
 "No se puede guardar en Blogger ahora mismo. Tus cambios siguen a salvo en "
 "este equipo; vuelve a intentarlo cuando tengas conexión."
@@ -232,58 +233,58 @@ msgstr ""
 "Can't save to Blogger right now. Your changes are still safe on this "
 "computer; try again once you're back online."
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:322
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:357
 msgid "Se editó en otro sitio después de que la abrieras aquí."
 msgstr "It was edited somewhere else after you opened it here."
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:323
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:358
 msgid "Tu versión"
 msgstr "Your version"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:324
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:359
 msgid "Versión en Blogger"
 msgstr "Version on Blogger"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:327
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:362
 msgid "Esta entrada cambió en Blogger"
 msgstr "This entry changed on Blogger"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:332
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:417
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:367
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:452
 msgid "Cancelar"
 msgstr "Cancel"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:332
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:367
 msgid "Usar la de Blogger"
 msgstr "Use the Blogger version"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:332
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:367
 msgid "Mantener la mía"
 msgstr "Keep mine"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:362
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:397
 msgid "No se pudo guardar"
 msgstr "Couldn't save"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:381
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:416
 msgid "No se pudo publicar"
 msgstr "Couldn't publish"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:397
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:432
 msgid "No se pudo volver a borrador"
 msgstr "Couldn't revert to draft"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:411
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:446
 msgid "Borrar entrada"
 msgstr "Delete entry"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:413
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:448
 #, python-brace-format
 msgid "¿Seguro que quieres borrar «{title}»? Esta acción no se puede deshacer."
 msgstr ""
 "Are you sure you want to delete “{title}”? This action can't be undone."
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:433
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:468
 msgid "No se pudo borrar"
 msgstr "Couldn't delete"
 

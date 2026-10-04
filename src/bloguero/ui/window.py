@@ -7,7 +7,7 @@ import gi
 gi.require_version("Gtk", "4.0")
 from gi.repository import Gio, GLib, Gtk
 
-from bloguero import __version__
+from bloguero import __version__, session
 from bloguero.api import BloggerClient
 from bloguero.convert import html_to_markdown
 from bloguero.i18n import _
@@ -49,15 +49,18 @@ class MainWindow(Gtk.ApplicationWindow):
 
         from bloguero import auth
 
-        if auth.has_stored_credentials():
+        state = session.startup_state(auth.has_stored_credentials(), bool(self._blogs))
+        if state == session.CONNECT:
             if self._blogs:
                 self._stack.set_visible_child_name("main")
             else:
                 self._stack.set_visible_child_name("loading")
             self._login()
-        elif self._blogs:
+        elif state == session.OFFLINE_LOGIN:
             self._stack.set_visible_child_name("main")
-            self._set_offline(True, _("No has iniciado sesión: mostrando datos guardados localmente."))
+            self._set_offline(
+                True, _("No has iniciado sesión: mostrando datos guardados localmente."), can_login=True
+            )
         else:
             self._stack.set_visible_child_name("login")
 
@@ -138,12 +141,15 @@ class MainWindow(Gtk.ApplicationWindow):
     def _build_main_view(self) -> Gtk.Widget:
         container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
-        self._offline_banner = Gtk.Label(
-            margin_top=6, margin_bottom=6, margin_start=12, margin_end=12, xalign=0
-        )
+        self._offline_bar = Gtk.Box(spacing=12, margin_top=6, margin_bottom=6, margin_start=12, margin_end=12)
+        self._offline_banner = Gtk.Label(xalign=0, hexpand=True)
         self._offline_banner.add_css_class("warning")
-        self._offline_banner.set_visible(False)
-        container.append(self._offline_banner)
+        self._connect_button = Gtk.Button(label=_("Conectar con Google"))
+        self._connect_button.connect("clicked", self._on_connect_clicked)
+        self._offline_bar.append(self._offline_banner)
+        self._offline_bar.append(self._connect_button)
+        self._offline_bar.set_visible(False)
+        container.append(self._offline_bar)
 
         paned = Gtk.Paned(orientation=Gtk.Orientation.HORIZONTAL, vexpand=True)
 
@@ -169,12 +175,19 @@ class MainWindow(Gtk.ApplicationWindow):
         container.append(paned)
         return container
 
-    def _set_offline(self, offline: bool, message: str = "") -> None:
+    def _set_offline(self, offline: bool, message: str = "", can_login: bool = False) -> None:
         if offline:
             self._offline_banner.set_text(
                 message or _("Sin conexión: mostrando datos guardados localmente.")
             )
-        self._offline_banner.set_visible(offline)
+        # El botón solo aparece cuando falta la sesión (no cuando solo falla la red)
+        self._connect_button.set_visible(offline and can_login)
+        self._connect_button.set_sensitive(True)
+        self._offline_bar.set_visible(offline)
+
+    def _on_connect_clicked(self, _button: Gtk.Button) -> None:
+        self._connect_button.set_sensitive(False)
+        self._login()
 
     def _show_message(self, title: str, detail: str) -> None:
         dialog = Gtk.AlertDialog()
@@ -212,13 +225,17 @@ class MainWindow(Gtk.ApplicationWindow):
         GLib.idle_add(self._on_login_success, client, blogs, posts)
 
     def _on_login_error(self, message: str) -> bool:
+        self._connect_button.set_sensitive(True)
         self._login_view.show_error(message)
         self._stack.set_visible_child_name("login")
         return False
 
     def _on_login_offline(self) -> bool:
+        from bloguero import auth
+
         if self._blogs:
-            self._set_offline(True)
+            # Sin token guardado el botón de conectar se mantiene, para reintentarlo
+            self._set_offline(True, can_login=not auth.has_stored_credentials())
             self._stack.set_visible_child_name("main")
         else:
             self._login_view.show_error(_("Sin conexión y sin datos locales guardados."))
