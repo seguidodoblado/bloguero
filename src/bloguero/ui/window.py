@@ -62,26 +62,44 @@ class MainWindow(Gtk.ApplicationWindow):
             self._stack.set_visible_child_name("login")
 
     def _build_menu_button(self) -> Gtk.Widget:
-        action_group = Gio.SimpleActionGroup()
+        # Menú de la cabecera: botones con icono del sistema (simbólico, con el normal como
+        # alternativa si el tema no lo tiene) y etiqueta, como en Telegraph Writer y
+        # Joseflix Request.
+        popover = Gtk.Popover()
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=2)
+        box.set_margin_start(6)
+        box.set_margin_end(6)
+        box.set_margin_top(6)
+        box.set_margin_bottom(6)
 
-        preferences_action = Gio.SimpleAction.new("preferences", None)
-        preferences_action.connect("activate", lambda *_a: self._open_preferences())
-        action_group.add_action(preferences_action)
-
-        about_action = Gio.SimpleAction.new("about", None)
-        about_action.connect("activate", lambda *_a: self._open_about())
-        action_group.add_action(about_action)
-
-        self.insert_action_group("win", action_group)
-
-        menu = Gio.Menu()
-        menu.append(_("Preferencias"), "win.preferences")
-        menu.append(_("Acerca de Bloguero"), "win.about")
+        entries = (
+            (
+                _("Preferencias"),
+                ("preferences-system-symbolic", "preferences-system"),
+                self._open_preferences,
+            ),
+            (
+                _("Acerca de Bloguero"),
+                ("help-about-symbolic", "help-about"),
+                self._open_about,
+            ),
+        )
+        for label, icon_names, callback in entries:
+            item = Gtk.Button()
+            content = Gtk.Box(spacing=8)
+            icon = Gio.ThemedIcon.new_from_names(list(icon_names))
+            content.append(Gtk.Image.new_from_gicon(icon))
+            content.append(Gtk.Label(label=label, xalign=0))
+            item.set_child(content)
+            item.set_halign(Gtk.Align.FILL)
+            item.connect("clicked", lambda _btn, fn=callback: (popover.popdown(), fn()))
+            box.append(item)
+        popover.set_child(box)
 
         menu_button = Gtk.MenuButton(
             icon_name="open-menu-symbolic", tooltip_text=_("Menú principal")
         )
-        menu_button.set_menu_model(menu)
+        menu_button.set_popover(popover)
         return menu_button
 
     def _open_preferences(self) -> None:
