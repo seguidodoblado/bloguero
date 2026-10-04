@@ -10,12 +10,12 @@
   <img src="https://img.shields.io/github/v/release/seguidodoblado/bloguero" alt="release">
   <img src="https://github.com/seguidodoblado/bloguero/actions/workflows/ci.yml/badge.svg" alt="CI">
   <img src="https://github.com/seguidodoblado/bloguero/actions/workflows/cd.yml/badge.svg" alt="CD">
-  <a href="https://github.com/seguidodoblado/seguidodoblado/blob/main/LICENSE"><img src="https://img.shields.io/github/license/seguidodoblado/bloguero" alt="license">
-  <a href="https://github.com/seguidodoblado/bloguero/commits/main/"><img src="https://img.shields.io/github/last-commit/seguidodoblado/bloguero" alt="last commit">
+  <a href="https://github.com/seguidodoblado/bloguero/blob/main/LICENSE"><img src="https://img.shields.io/github/license/seguidodoblado/bloguero" alt="license"></a>
+  <a href="https://github.com/seguidodoblado/bloguero/commits/main/"><img src="https://img.shields.io/github/last-commit/seguidodoblado/bloguero" alt="last commit"></a>
   <a href="https://github.com/seguidodoblado/bloguero/commits/main/"><img src="https://img.shields.io/github/commit-activity/t/seguidodoblado/bloguero" alt="total commits"></a>
   <img src="https://img.shields.io/github/downloads/seguidodoblado/bloguero/total" alt="downloads">
   <img src="https://img.shields.io/github/stars/seguidodoblado/bloguero?style=flat" alt="stars">
-  <a href="https://github.com/seguidodoblado/bloguero/issues"><img src="https://img.shields.io/github/issues/seguidodoblado/bloguero" alt="issues">
+  <a href="https://github.com/seguidodoblado/bloguero/issues"><img src="https://img.shields.io/github/issues/seguidodoblado/bloguero" alt="issues"></a>
   <img src="https://img.shields.io/github/languages/top/seguidodoblado/bloguero" alt="language">
   <a href="https://codetime.dev"><img alt="CodeTime Badge" src="https://shields.jannchie.com/endpoint?style=flat&color=0284c7&url=https%3A%2F%2Fcodetime.dev%2Fv3%2Fusers%2Fshield%3Fuid%3D36830"></a>
   <a href="https://wakatime.com/badge/github/seguidodoblado/bloguero"><img src="https://wakatime.com/badge/github/seguidodoblado/bloguero.svg" alt="wakatime"></a>
