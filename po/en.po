@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bloguero 0.1.0\n"
 "Report-Msgid-Bugs-To: jose.antonio.seguido@gmail.com\n"
-"POT-Creation-Date: 2026-10-04 13:57+0200\n"
+"POT-Creation-Date: 2026-10-04 14:44+0200\n"
 "PO-Revision-Date: 2026-10-01 16:23+0200\n"
-"Last-Translator: Jose Antonio Seguido Doblado <jose.antonio.seguido@gmail."
+"Last-Translator: José Antonio Seguido Doblado <jose.antonio.seguido@gmail."
 "com>\n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -66,7 +66,7 @@ msgid "Volver a borrador"
 msgstr "Revert to draft"
 
 #: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/editor.py:94
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:422
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:417
 msgid "Borrar"
 msgstr "Delete"
 
@@ -205,32 +205,26 @@ msgid "Cliente de escritorio para Blogger"
 msgstr "Desktop client for Blogger"
 
 #: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:101
-msgid "Página del proyecto"
-msgstr "Project page"
-
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:107
-msgid ""
-"Este programa es software libre: se distribuye bajo la GNU General Public "
-"License, versión 3. El texto completo está en el archivo LICENSE del "
-"repositorio y en https://www.gnu.org/licenses/gpl-3.0.html."
+msgid "github.com/seguidodoblado/bloguero"
 msgstr ""
-"This program is free software: it's distributed under the GNU General "
-"Public License, version 3. The full text is in the LICENSE file in the "
-"repository and at https://www.gnu.org/licenses/gpl-3.0.html."
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:162
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:105
+msgid "translator-credits"
+msgstr "José Antonio Seguido Doblado <jose.antonio.seguido@gmail.com>"
+
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:157
 msgid "Sin conexión: mostrando datos guardados localmente."
 msgstr "Offline: showing locally saved data."
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:211
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:206
 msgid "Sin conexión y sin datos locales guardados."
 msgstr "Offline, and no local data saved."
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:292
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:287
 msgid "Sin conexión"
 msgstr "Offline"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:294
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:289
 msgid ""
 "No se puede guardar en Blogger ahora mismo. Tus cambios siguen a salvo en "
 "este equipo; vuelve a intentarlo cuando tengas conexión."
@@ -238,57 +232,69 @@ msgstr ""
 "Can't save to Blogger right now. Your changes are still safe on this "
 "computer; try again once you're back online."
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:327
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:322
 msgid "Se editó en otro sitio después de que la abrieras aquí."
 msgstr "It was edited somewhere else after you opened it here."
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:328
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:323
 msgid "Tu versión"
 msgstr "Your version"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:329
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:324
 msgid "Versión en Blogger"
 msgstr "Version on Blogger"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:332
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:327
 msgid "Esta entrada cambió en Blogger"
 msgstr "This entry changed on Blogger"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:337
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:422
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:332
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:417
 msgid "Cancelar"
 msgstr "Cancel"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:337
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:332
 msgid "Usar la de Blogger"
 msgstr "Use the Blogger version"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:337
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:332
 msgid "Mantener la mía"
 msgstr "Keep mine"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:367
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:362
 msgid "No se pudo guardar"
 msgstr "Couldn't save"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:386
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:381
 msgid "No se pudo publicar"
 msgstr "Couldn't publish"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:402
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:397
 msgid "No se pudo volver a borrador"
 msgstr "Couldn't revert to draft"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:416
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:411
 msgid "Borrar entrada"
 msgstr "Delete entry"
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:418
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:413
 #, python-brace-format
 msgid "¿Seguro que quieres borrar «{title}»? Esta acción no se puede deshacer."
 msgstr ""
 "Are you sure you want to delete “{title}”? This action can't be undone."
 
-#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:438
+#: /media/seguidodoblado/Proyectos/Desarrollo/bloguero/src/bloguero/ui/window.py:433
 msgid "No se pudo borrar"
 msgstr "Couldn't delete"
+
+#~ msgid "Página del proyecto"
+#~ msgstr "Project page"
+
+#~ msgid ""
+#~ "Este programa es software libre: se distribuye bajo la GNU General Public "
+#~ "License, versión 3. El texto completo está en el archivo LICENSE del "
+#~ "repositorio y en https://www.gnu.org/licenses/gpl-3.0.html."
+#~ msgstr ""
+#~ "This program is free software: it's distributed under the GNU General "
+#~ "Public License, version 3. The full text is in the LICENSE file in the "
+#~ "repository and at https://www.gnu.org/licenses/gpl-3.0.html."

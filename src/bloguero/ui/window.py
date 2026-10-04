@@ -98,16 +98,11 @@ class MainWindow(Gtk.ApplicationWindow):
             logo_icon_name="bloguero",
             comments=_("Cliente de escritorio para Blogger"),
             website="https://github.com/seguidodoblado/bloguero",
-            website_label=_("Página del proyecto"),
-            authors=["Jose Antonio Seguido Doblado"],
-            copyright="© 2026 Jose Antonio Seguido Doblado",
-            license_type=Gtk.License.CUSTOM,
-            wrap_license=True,
-            license=_(
-                "Este programa es software libre: se distribuye bajo la GNU General Public "
-                "License, versión 3. El texto completo está en el archivo LICENSE del "
-                "repositorio y en https://www.gnu.org/licenses/gpl-3.0.html."
-            ),
+            website_label=_("github.com/seguidodoblado/bloguero"),
+            authors=["José Antonio Seguido Doblado <jose.antonio.seguido@gmail.com>"],
+            copyright="© 2026 José Antonio Seguido Doblado",
+            license_type=Gtk.License.GPL_3_0,
+            translator_credits=_("translator-credits"),
         )
         about.present()
 
