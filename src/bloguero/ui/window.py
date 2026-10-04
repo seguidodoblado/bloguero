@@ -5,8 +5,9 @@ import threading
 import gi
 
 gi.require_version("Gtk", "4.0")
-from gi.repository import GLib, Gtk
+from gi.repository import Gio, GLib, Gtk
 
+from bloguero import __version__
 from bloguero.api import BloggerClient
 from bloguero.convert import html_to_markdown
 from bloguero.i18n import _
@@ -23,11 +24,7 @@ class MainWindow(Gtk.ApplicationWindow):
 
         header = Gtk.HeaderBar()
         header.set_title_widget(Gtk.Label(label="Bloguero"))
-        preferences_button = Gtk.Button(
-            icon_name="preferences-system-symbolic", tooltip_text=_("Preferencias")
-        )
-        preferences_button.connect("clicked", lambda _btn: self._open_preferences())
-        header.pack_end(preferences_button)
+        header.pack_end(self._build_menu_button())
         self.set_titlebar(header)
 
         self._store = Store()
@@ -64,10 +61,55 @@ class MainWindow(Gtk.ApplicationWindow):
         else:
             self._stack.set_visible_child_name("login")
 
+    def _build_menu_button(self) -> Gtk.Widget:
+        action_group = Gio.SimpleActionGroup()
+
+        preferences_action = Gio.SimpleAction.new("preferences", None)
+        preferences_action.connect("activate", lambda *_a: self._open_preferences())
+        action_group.add_action(preferences_action)
+
+        about_action = Gio.SimpleAction.new("about", None)
+        about_action.connect("activate", lambda *_a: self._open_about())
+        action_group.add_action(about_action)
+
+        self.insert_action_group("win", action_group)
+
+        menu = Gio.Menu()
+        menu.append(_("Preferencias"), "win.preferences")
+        menu.append(_("Acerca de Bloguero"), "win.about")
+
+        menu_button = Gtk.MenuButton(
+            icon_name="open-menu-symbolic", tooltip_text=_("Menú principal")
+        )
+        menu_button.set_menu_model(menu)
+        return menu_button
+
     def _open_preferences(self) -> None:
         from bloguero.ui.preferences import PreferencesWindow
 
         PreferencesWindow(self.get_application()).present()
+
+    def _open_about(self) -> None:
+        about = Gtk.AboutDialog(
+            transient_for=self,
+            modal=True,
+            program_name="Bloguero",
+            version=__version__,
+            logo_icon_name="bloguero",
+            comments=_("Cliente de escritorio para Blogger"),
+            website="https://github.com/seguidodoblado/bloguero",
+            website_label=_("Página del proyecto"),
+            authors=["Jose Antonio Seguido Doblado"],
+            copyright="© 2026 Jose Antonio Seguido Doblado",
+            license_type=Gtk.License.CUSTOM,
+            wrap_license=True,
+            license=_(
+                "Este programa es software libre: se distribuye bajo la GNU General Public "
+                "License, versión 3. El texto completo está en el archivo LICENSE del "
+                "repositorio y en https://www.gnu.org/licenses/gpl-3.0.html."
+            ),
+        )
+        about.present()
 
     def _build_loading_view(self) -> Gtk.Widget:
         box = Gtk.Box(
