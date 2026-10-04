@@ -15,13 +15,23 @@ package="$base/../bloguero_${version}_all.deb"
 command -v dpkg-deb >/dev/null 2>&1 || { echo "Falta dpkg-deb (instala dpkg-dev)." >&2; exit 1; }
 sh "$base/i18n-compile.sh"
 rm -rf "$stage"
-mkdir -p "$stage/DEBIAN" "$stage/opt/bloguero" "$stage/usr/bin" "$stage/usr/share/applications" "$stage/usr/share/icons/hicolor/scalable/apps"
-cp -a "$base/src/bloguero" "$stage/opt/bloguero/"
-find "$stage/opt/bloguero" -type d -name __pycache__ -prune -exec rm -rf {} +
+doc="$stage/usr/share/doc/bloguero"
+mkdir -p "$stage/DEBIAN" "$stage/usr/share/bloguero" "$stage/usr/bin" "$stage/usr/share/applications" "$stage/usr/share/icons/hicolor/scalable/apps" "$doc"
+cp -a "$base/src/bloguero" "$stage/usr/share/bloguero/"
+find "$stage/usr/share/bloguero" -type d -name __pycache__ -prune -exec rm -rf {} +
 cp "$base/debian/bloguero-launcher" "$stage/usr/bin/bloguero"
 cp "$base/debian/bloguero.desktop" "$stage/usr/share/applications/"
 cp "$base/src/bloguero/assets/bloguero.svg" "$stage/usr/share/icons/hicolor/scalable/apps/"
+cp "$base/debian/copyright" "$doc/copyright"
+gzip -9n -c "$base/debian/changelog" > "$doc/changelog.Debian.gz"
+# Páginas de manual (inglés en man1, español en es/man1); la versión se rellena aquí
+mkdir -p "$stage/usr/share/man/man1" "$stage/usr/share/man/es/man1"
+sed "s/@VERSION@/${version}/" "$base/debian/bloguero.1" | gzip -9n > "$stage/usr/share/man/man1/bloguero.1.gz"
+sed "s/@VERSION@/${version}/" "$base/debian/bloguero.es.1" | gzip -9n > "$stage/usr/share/man/es/man1/bloguero.1.gz"
 cp "$base/debian/postinst" "$stage/DEBIAN/postinst"
+# Permisos fijos (no dependen de la umask de quien construye): 755 en directorios, 644 en ficheros
+find "$stage" -type d -exec chmod 755 {} +
+find "$stage" -type f -exec chmod 644 {} +
 cat > "$stage/DEBIAN/control" <<EOF
 Package: bloguero
 Version: ${version}
@@ -36,8 +46,11 @@ Description: Cliente de escritorio para Blogger
  publicar y borrar entradas con un editor enriquecido, caché local y
  trabajo sin conexión.
 EOF
+chmod 644 "$stage/DEBIAN/control"
 chmod 755 "$stage/usr/bin/bloguero"
 chmod 755 "$stage/DEBIAN/postinst"
+(cd "$stage" && find . -type f ! -path './DEBIAN/*' -printf '%P\n' | LC_ALL=C sort | xargs -d '\n' md5sum > DEBIAN/md5sums)
+chmod 644 "$stage/DEBIAN/md5sums"
 dpkg-deb --build --root-owner-group "$stage" "$package"
 rm -rf "$stage"
 echo "Paquete generado: $package"

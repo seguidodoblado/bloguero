@@ -1,0 +1,32 @@
+.TH BLOGUERO 1 "" "bloguero @VERSION@"
+.SH NAME
+bloguero \- desktop client for Blogger
+.SH SYNOPSIS
+.B bloguero
+.SH DESCRIPTION
+.B bloguero
+is a GTK application to manage a Blogger blog: list, create, edit, publish and delete
+posts with a rich text editor, a local cache and offline work.
+.PP
+It opens the graphical interface. Standard GTK and GApplication options are accepted;
+the application has no commands of its own.
+.SH FILES
+.TP
+.I ~/.config/bloguero/settings.json
+User settings (language and theme).
+.TP
+.I ~/.config/bloguero/client_secret.json
+Google OAuth client credentials.
+.TP
+.I ~/.cache/bloguero/bloguero.db
+Local cache of blogs and posts. The refresh token is kept in the system keyring under the
+service name
+.BR bloguero .
+.SH ENVIRONMENT
+.TP
+.B LANGUAGE
+Interface language when it is set to \(lqSystem\(rq in the preferences.
+.SH SEE ALSO
+Project page: https://github.com/seguidodoblado/bloguero
+.SH AUTHOR
+Jose Antonio Seguido Doblado <jose.antonio.seguido@gmail.com>
