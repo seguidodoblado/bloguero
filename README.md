@@ -31,7 +31,8 @@ cuenta de Google y tu propio proyecto en Google Cloud.
   guardar se conservan aunque cierres la app, y si una entrada cambió en Blogger mientras la editabas
   se te avisa antes de sobrescribirla.
 - **Interfaz en español e inglés** (gettext), e **idioma y tema (claro/oscuro) configurables** desde
-  Preferencias, siguiendo el tema del sistema por defecto.
+  Preferencias, siguiendo el tema del sistema por defecto. El menú de la cabecera da acceso a
+  Preferencias y a la ventana «Acerca de» estándar de GNOME.
 
 ## Documentación
 
