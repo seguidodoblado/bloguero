@@ -46,6 +46,10 @@ Preferences and the standard GNOME About window.
 All documentation—installation, user guide, technical specifications, troubleshooting, and more—is in
 the **[project wiki](https://github.com/seguidodoblado/bloguero/wiki)** (Spanish and English).
 
+## Privacy
+
+Bloguero has no server or account of its own and does not collect data. What is stored, where, and who it talks to is in the **[privacy policy](PRIVACY.en.md)**.
+
 ## License
 
-This project is distributed under the GNU General Public License, version 3 (see `LICENSE`).
+This project is distributed under the GNU General Public License, version 3 or later (see `LICENSE`).

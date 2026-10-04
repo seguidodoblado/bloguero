@@ -46,6 +46,10 @@ cuenta de Google y tu propio proyecto en Google Cloud.
 Toda la documentación —instalación, guía de uso, especificaciones técnicas, solución de problemas y más— está en
 la **[wiki del proyecto](https://github.com/seguidodoblado/bloguero/wiki)** (español e inglés).
 
+## Privacidad
+
+Bloguero no tiene servidor ni cuenta propios y no recoge datos. Qué se guarda, dónde y con quién se comunica está en la **[política de privacidad](PRIVACY.md)**.
+
 ## Licencia
 
-Este proyecto se distribuye bajo la GNU General Public License, versión 3 (ver `LICENSE`).
+Este proyecto se distribuye bajo la GNU General Public License, versión 3 o posterior (ver `LICENSE`).
