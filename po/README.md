@@ -41,6 +41,22 @@ msginit --input=po/bloguero.pot --locale=<código> --output=po/<código>.po
 Traduce `po/<código>.po` y compílalo con `./i18n-compile.sh` — detecta
 cualquier `po/*.po` automáticamente, no hace falta tocar el script.
 
+## Créditos de traducción
+
+El «Acerca de» muestra quién tradujo cada idioma con `translator_credits=_("translator-credits")`. Es una
+cadena más del catálogo: en `po/<código>.po`, rellena el `msgstr` de la entrada `translator-credits` con los
+traductores, uno por línea (`\n`) y con `<correo>` opcional:
+
+```po
+msgid "translator-credits"
+msgstr ""
+"Nombre Apellido <correo@ejemplo.org>\n"
+"Otra Persona"
+```
+
+Si un idioma no la traduce, GTK oculta la sección (es lo que pasa con el español, que no tiene catálogo).
+No cambies el `msgid ""` de la cabecera del fichero: ese es el de la cabecera, no el de los créditos.
+
 ## Dónde vive cada cosa
 
 - `po/*.po`, `po/bloguero.pot` — fuente de las traducciones, versionado en git.
