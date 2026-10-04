@@ -5,6 +5,12 @@ en este archivo.
 
 ## [Unreleased]
 
+## [0.1.9] - 2026-10-05
+
+### Added
+
+- Política de privacidad (`PRIVACY.md` y `PRIVACY.en.md`), enlazada desde los README
+
 ### Fixed
 
 - Sin sesión guardada pero con datos en la caché, la aplicación solo mostraba esos datos sin ofrecer cómo iniciar sesión. El aviso «No has iniciado sesión» lleva ahora un botón «Conectar con Google»; si el intento falla por falta de red, el botón sigue disponible para reintentarlo

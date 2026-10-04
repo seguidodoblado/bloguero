@@ -1,3 +1,11 @@
+bloguero (0.1.9-1) noble; urgency=medium
+
+  * Add a "Connect with Google" button when there is no saved session
+    but cached data exists, so the user can sign in again; add the
+    privacy policy.
+
+ -- Jose Antonio Seguido Doblado <jose.antonio.seguido@gmail.com>  Mon, 05 Oct 2026 00:22:24 +0200
+
 bloguero (0.1.8-1) noble; urgency=medium
 
   * Packaging: the package now complies with Debian policy (installed in
