@@ -1,11 +1,15 @@
+<p align="right"><a href="CONTRIBUTING.en.md">🇺🇸 English</a></p>
+
 # Contributing
 
 Gracias por tu interés en contribuir a este proyecto.
 
 ## Desarrollo
 
-Consulta el `README.md` para obtener información sobre cómo
-preparar el entorno de desarrollo.
+Consulta la sección [Entorno de desarrollo](https://github.com/seguidodoblado/bloguero/wiki/es-01-4-instalacion-configuracion#entorno-de-desarrollo)
+de la wiki para preparar el entorno, y
+[Comprobaciones (para contribuir)](https://github.com/seguidodoblado/bloguero/wiki/es-01-4-instalacion-configuracion#comprobaciones-para-contribuir)
+para saber qué debe pasar antes de abrir una pull request.
 
 ## Cambios
 
