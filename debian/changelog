@@ -1,3 +1,11 @@
+bloguero (0.1.7-1) noble; urgency=medium
+
+  * The About window uses the standard GTK GPL-3.0-or-later license
+    instead of a custom text, shows the author's e-mail and adds the
+    English translator credits.
+
+ -- Jose Antonio Seguido Doblado <jose.antonio.seguido@gmail.com>  Sun, 04 Oct 2026 15:15:34 +0200
+
 bloguero (0.1.6-1) noble; urgency=medium
 
   * Add the standard GNOME About window, reachable from a new header

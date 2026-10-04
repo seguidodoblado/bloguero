@@ -5,6 +5,16 @@ en este archivo.
 
 ## [Unreleased]
 
+## [0.1.7] - 2026-10-04
+
+### Changed
+
+- Ventana «Acerca de»: usa la licencia GPL-3.0 o posterior predefinida de GTK en lugar de un texto propio, la autoría incluye el correo electrónico (como enlace) y la etiqueta del enlace al proyecto es la dirección del repositorio
+
+### Added
+
+- Créditos de traducción (`translator-credits`) en el catálogo de inglés, que se muestran en la vista de créditos del «Acerca de»
+
 ## [0.1.6] - 2026-10-04
 
 ### Added
