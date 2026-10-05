@@ -5,6 +5,9 @@ en este archivo.
 
 ## [Unreleased]
 
+### Cambiado
+- El identificador de la aplicación (`Gtk.Application`) pasa de `dev.seguidodoblado.Bloguero`, que suponía un dominio propio, a `io.github.seguidodoblado.Bloguero`, la forma que exige Flathub para proyectos alojados en GitHub; no cambia ningún dato guardado
+
 ## [0.1.9] - 2026-10-05
 
 ### Added

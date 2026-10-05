@@ -11,7 +11,7 @@ from gi.repository import GLib, Gtk
 from bloguero import i18n, settings, theme
 from bloguero.ui.window import MainWindow
 
-APPLICATION_ID = "dev.seguidodoblado.Bloguero"
+APPLICATION_ID = "io.github.seguidodoblado.Bloguero"
 
 # Con "python3 -m" argv[0] es la ruta de __main__.py y GTK derivaría de ahí el WM_CLASS;
 # se fija para que coincida con StartupWMClass del .desktop y el panel muestre el icono.
