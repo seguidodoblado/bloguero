@@ -10,7 +10,7 @@
   <a href="https://github.com/seguidodoblado/bloguero/releases"><img src="https://img.shields.io/github/v/release/seguidodoblado/bloguero" alt="release"></a>
   <a href="https://github.com/seguidodoblado/bloguero/actions/workflows/ci.yml"><img src="https://github.com/seguidodoblado/bloguero/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/seguidodoblado/bloguero/actions/workflows/cd.yml"><img src="https://github.com/seguidodoblado/bloguero/actions/workflows/cd.yml/badge.svg" alt="CD"></a>
-  <a href="https://github.com/seguidodoblado/bloguero/blob/main/LICENSE"><img src="https://img.shields.io/github/license/seguidodoblado/bloguero" alt="license"></a>
+  <a href="https://github.com/seguidodoblado/bloguero/blob/main/COPYING"><img src="https://img.shields.io/github/license/seguidodoblado/bloguero" alt="license"></a>
   <a href="https://github.com/seguidodoblado/bloguero/commits/main/"><img src="https://img.shields.io/github/last-commit/seguidodoblado/bloguero" alt="last commit"></a>
   <a href="https://github.com/seguidodoblado/bloguero/commits/main/"><img src="https://img.shields.io/github/commit-activity/t/seguidodoblado/bloguero" alt="total commits"></a>
   <a href="https://github.com/seguidodoblado/bloguero/releases"><img src="https://img.shields.io/github/downloads/seguidodoblado/bloguero/total" alt="downloads"></a>
@@ -52,4 +52,4 @@ Bloguero has no server or account of its own and does not collect data. What is 
 
 ## License
 
-This project is distributed under the GNU General Public License, version 3 or later (see `LICENSE`).
+This project is distributed under the GNU General Public License, version 3 or later (see `COPYING`).
