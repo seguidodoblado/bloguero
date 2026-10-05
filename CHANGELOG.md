@@ -5,6 +5,9 @@ en este archivo.
 
 ## [Unreleased]
 
+### Cambiado
+- «Programar publicación» vuelve a ser una casilla (`Gtk.CheckButton`) en lugar de un interruptor (`Gtk.Switch`)
+
 ## [0.1.10] - 2026-10-05
 
 ### Cambiado
