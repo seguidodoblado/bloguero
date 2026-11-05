@@ -27,16 +27,22 @@ class BloggerClient:
     def list_posts(self, blog_id: str, statuses: list[str] | None = None) -> list[Post]:
         statuses = statuses or ["live", "draft", "scheduled"]
         posts: list[Post] = []
-        request = self._service.posts().list(
-            blogId=blog_id,
-            status=[s.upper() for s in statuses],
-            fetchBodies=True,
-        )
-        while request is not None:
+        page_token: str | None = None
+        while True:
+            # Las páginas se piden a mano con el nextPageToken: `list_next` de la librería de Google falla con
+            # «repeated value: status» en cuanto hay más de una página y se piden varios estados a la vez.
+            extra = {"pageToken": page_token} if page_token else {}
+            request = self._service.posts().list(
+                blogId=blog_id,
+                status=[s.upper() for s in statuses],
+                fetchBodies=True,
+                **extra,
+            )
             data = self._call(request)
             posts.extend(_post_from_api(p, blog_id) for p in data.get("items", []))
-            request = self._service.posts().list_next(request, data)
-        return posts
+            page_token = data.get("nextPageToken")
+            if not page_token:
+                return posts
 
     def get_post(self, blog_id: str, post_id: str) -> Post:
         data = self._call(

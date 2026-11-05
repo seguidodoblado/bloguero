@@ -93,6 +93,20 @@ class Store:
         self._conn.execute("DELETE FROM posts WHERE id = ?", (post_id,))
         self._conn.commit()
 
+    def prune_posts(self, blog_id: str, keep_ids: set[str]) -> list[str]:
+        """Quita de la caché las entradas de un blog que el servidor ya no devuelve (borradas en la web).
+
+        Las que tienen cambios locales sin guardar (`dirty`) se conservan: su contenido solo existe aquí.
+        Devuelve los ids borrados.
+        """
+        rows = self._conn.execute(
+            "SELECT id FROM posts WHERE blog_id = ? AND dirty = 0", (blog_id,)
+        ).fetchall()
+        gone = [row["id"] for row in rows if row["id"] not in keep_ids]
+        self._conn.executemany("DELETE FROM posts WHERE id = ?", [(post_id,) for post_id in gone])
+        self._conn.commit()
+        return gone
+
     def mark_dirty(self, post_id: str, title: str, html: str, labels: list[str]) -> None:
         """Guarda cambios locales de un borrador sin tocar el estado conocido del servidor."""
         self._conn.execute(

@@ -8,7 +8,7 @@ import gi
 gi.require_version("Gtk", "4.0")
 from gi.repository import GLib, Gtk
 
-from bloguero import i18n, settings, theme
+from bloguero import i18n, logsetup, settings, theme
 from bloguero.ui.window import MainWindow
 
 APPLICATION_ID = "io.github.seguidodoblado.Bloguero"
@@ -46,6 +46,7 @@ def main() -> int:
     else:
         os.environ.pop("LANGUAGE", None)
     i18n.install()
+    logsetup.setup()
     app = BlogueroApplication()
     return app.run(sys.argv)
 

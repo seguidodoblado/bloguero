@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 import threading
 
 import gi
@@ -16,6 +17,8 @@ from bloguero.store import Store
 from bloguero.ui.editor import EditorView
 from bloguero.ui.login import LoginView
 from bloguero.ui.post_list import PostListView
+
+log = logging.getLogger(__name__)
 
 
 class MainWindow(Gtk.ApplicationWindow):
@@ -218,7 +221,8 @@ class MainWindow(Gtk.ApplicationWindow):
         except auth.AuthError as exc:
             GLib.idle_add(self._on_login_error, str(exc))
             return
-        except Exception:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
+        except Exception:
+            log.exception("Falló _login_worker")
             GLib.idle_add(self._on_login_offline)
             return
 
@@ -270,7 +274,8 @@ class MainWindow(Gtk.ApplicationWindow):
             return
         try:
             posts = self._client.list_posts(self._current_blog.id)
-        except Exception:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
+        except Exception:
+            log.exception("Falló _refresh_posts_worker")
             GLib.idle_add(self._set_offline, True, "")
             return
         GLib.idle_add(self._apply_fetched_posts, posts)
@@ -286,6 +291,9 @@ class MainWindow(Gtk.ApplicationWindow):
                 post.html = cached.html
                 post.dirty = True
             self._store.save_post(post)
+        # El servidor devuelve la lista completa del blog: lo que falta se borró en la web.
+        if self._current_blog:
+            self._store.prune_posts(self._current_blog.id, {post.id for post in posts})
         self._post_list.set_posts(posts)
 
     def _refresh_posts(self) -> None:
@@ -293,7 +301,8 @@ class MainWindow(Gtk.ApplicationWindow):
             return
         try:
             posts = self._client.list_posts(self._current_blog.id)
-        except Exception:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
+        except Exception:
+            log.exception("Falló _refresh_posts")
             self._set_offline(True)
             return
         self._apply_fetched_posts(posts)
@@ -339,7 +348,8 @@ class MainWindow(Gtk.ApplicationWindow):
     def _has_remote_conflict(self, local_post: Post) -> bool:
         try:
             server_post = self._client.get_post(self._current_blog.id, local_post.id)
-        except Exception:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
+        except Exception:
+            log.exception("Falló _has_remote_conflict")
             return False
 
         if not local_post.updated or not server_post.updated:
@@ -372,7 +382,8 @@ class MainWindow(Gtk.ApplicationWindow):
     def _on_conflict_resolved(self, dialog: Gtk.AlertDialog, result, server_post: Post) -> None:
         try:
             choice = dialog.choose_finish(result)
-        except Exception:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
+        except Exception:
+            log.exception("Falló _on_conflict_resolved")
             return
 
         if choice == 1:
@@ -393,7 +404,8 @@ class MainWindow(Gtk.ApplicationWindow):
                 post = self._client.update_post(
                     self._current_blog.id, self._current_post.id, title, html, labels=labels
                 )
-        except Exception as exc:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
+        except Exception as exc:
+            log.exception("Falló _do_save")
             self._show_message(_("No se pudo guardar"), str(exc))
             return None
 
@@ -412,7 +424,8 @@ class MainWindow(Gtk.ApplicationWindow):
             published = self._client.publish_post(
                 self._current_blog.id, post.id, publish_date=scheduled_at
             )
-        except Exception as exc:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
+        except Exception as exc:
+            log.exception("Falló _publish")
             self._show_message(_("No se pudo publicar"), str(exc))
             return
 
@@ -428,7 +441,8 @@ class MainWindow(Gtk.ApplicationWindow):
 
         try:
             reverted = self._client.revert_post(self._current_blog.id, self._current_post.id)
-        except Exception as exc:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
+        except Exception as exc:
+            log.exception("Falló _revert_to_draft")
             self._show_message(_("No se pudo volver a borrador"), str(exc))
             return
 
@@ -457,14 +471,16 @@ class MainWindow(Gtk.ApplicationWindow):
     def _on_delete_confirmed(self, dialog: Gtk.AlertDialog, result) -> None:
         try:
             choice = dialog.choose_finish(result)
-        except Exception:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
+        except Exception:
+            log.exception("Falló _on_delete_confirmed")
             return
         if choice != 1 or not self._client or not self._current_blog or not self._current_post:
             return
 
         try:
             self._client.delete_post(self._current_blog.id, self._current_post.id)
-        except Exception as exc:  # noqa: BLE001 - un fallo de red o de la API se muestra al usuario, no debe cerrar la app
+        except Exception as exc:
+            log.exception("Falló _on_delete_confirmed")
             self._show_message(_("No se pudo borrar"), str(exc))
             return
 

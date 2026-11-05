@@ -22,6 +22,7 @@ Everything stays on your computer:
 - The Google **refresh token**, in the system keyring (libsecret), never in clear text on disk.
 - The **OAuth client credentials** that you download from Google Cloud, in `~/.config/bloguero/client_secret.json`.
 - The **cache** of blogs and posts, in `~/.cache/bloguero/bloguero.db`.
+- An **error log**, in `~/.cache/bloguero/bloguero.log` (only the error type and its traceback, without the content of your posts or credentials).
 - The **settings**, in `~/.config/bloguero/settings.json`.
 
 ## Who it is shared with

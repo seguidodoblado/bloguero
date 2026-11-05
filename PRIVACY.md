@@ -22,6 +22,7 @@ Todo queda en tu equipo:
 - El **token de renovación** de Google, en el llavero del sistema (libsecret), nunca en disco en claro.
 - Las **credenciales del cliente OAuth** que tú descargas de Google Cloud, en `~/.config/bloguero/client_secret.json`.
 - La **caché** de blogs y entradas, en `~/.cache/bloguero/bloguero.db`.
+- Un **registro de errores**, en `~/.cache/bloguero/bloguero.log` (solo el tipo de error y su traza, sin el contenido de las entradas ni credenciales).
 - Los **ajustes**, en `~/.config/bloguero/settings.json`.
 
 ## Con quién se comparten
