@@ -5,6 +5,15 @@ en este archivo.
 
 ## [Unreleased]
 
+## [0.1.12] - 2026-11-06
+
+### Añadido
+- **Registro de errores** en `~/.cache/bloguero/bloguero.log` (rotado, 200 KB): lo que antes se atrapaba en silencio y se mostraba solo como «Sin conexión» ahora deja la excepción y su traza, para poder diagnosticar fallos de sincronización.
+
+### Corregido
+- **La sincronización fallaba en cuanto el blog tenía más de 10 entradas** (la segunda página de resultados): la librería de Google rechazaba pedirla con varios estados a la vez («repeated value: status»), Bloguero se quedaba en «Sin conexión» y mostraba solo la caché, de modo que los borradores nuevos no aparecían y los cambios hechos en la web tampoco. Ahora las páginas se piden a mano con el `nextPageToken`.
+- Los borradores borrados en la web ya se quitan también de la caché local al sincronizar (antes se quedaban para siempre y reaparecían al abrir sin conexión). Los que tienen cambios locales sin guardar se conservan.
+
 ## [0.1.11] - 2026-10-05
 
 ### Cambiado

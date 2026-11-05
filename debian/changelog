@@ -1,3 +1,15 @@
+bloguero (0.1.12-1) noble; urgency=medium
+
+  * Fix synchronisation with more than 10 posts: the second page of
+    results failed when several statuses were requested, leaving the
+    application offline with stale cached data.
+  * Drafts deleted on the web are now also removed from the local cache
+    when syncing; drafts with unsaved local changes are kept.
+  * Errors that were silently caught are now logged to
+    ~/.cache/bloguero/bloguero.log.
+
+ -- José Antonio Seguido Doblado <jose.antonio.seguido@gmail.com>  Fri, 06 Nov 2026 00:30:08 +0100
+
 bloguero (0.1.11-1) noble; urgency=medium
 
   * The "Schedule publication" option is a check box again instead of a
