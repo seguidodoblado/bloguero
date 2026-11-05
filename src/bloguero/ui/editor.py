@@ -169,7 +169,7 @@ class EditorView(Gtk.Box):
         if not self._schedule_check.get_active():
             return None
         date = self._calendar.get_date()
-        naive = datetime(   # noqa: DTZ001 - es la hora local que elige el usuario; astimezone() la fija
+        naive = datetime(   # es la hora local que elige el usuario; astimezone() la fija
             date.get_year(),
             date.get_month(),
             date.get_day_of_month(),

@@ -38,3 +38,8 @@ pythonpath = ["src"]
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+
+[tool.ruff.lint.per-file-ignores]
+# El selector de fecha da la hora local del usuario sin zona; astimezone() se la pone justo después.
+# (Va aquí y no en un `noqa`: cada versión de ruff discrepa sobre si DTZ001 aplica a esa línea.)
+"src/bloguero/ui/editor.py" = ["DTZ001"]
