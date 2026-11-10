@@ -25,6 +25,10 @@
   Cliente de escritorio para Blogger: gestiona tus entradas sin pasar por el navegador.
 </p>
 
+<p align="center">
+  <img src="docs/screenshot.png" alt="Captura de Bloguero">
+</p>
+
 Aplicación de escritorio (GTK 4 + PyGObject), de uso personal: todo ocurre en tu equipo, con tu propia
 cuenta de Google y tu propio proyecto en Google Cloud.
 
@@ -60,6 +64,10 @@ Este proyecto se distribuye bajo la GNU General Public License, versión 3 o pos
 
 <p align="center"> 
 Blogger desktop client: manage your posts without going through the browser.
+</p>
+
+<p align="center">
+  <img src="docs/screenshot-en.png" alt="Bloguero screenshot">
 </p>
 
 Desktop application (GTK 4 + PyGObject), for personal use: everything happens on your computer, with your own
