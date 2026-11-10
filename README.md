@@ -1,5 +1,3 @@
-<p align="right"><a href="README.en.md">🇺🇸 English</a></p>
-
 <p align="center">
   <img src="src/bloguero/assets/bloguero.svg" alt="Logotipo de Bloguero" width="128">
 </p>
@@ -20,6 +18,8 @@
   <a href="https://codetime.dev"><img alt="CodeTime Badge" src="https://shields.jannchie.com/endpoint?style=flat&color=0284c7&url=https%3A%2F%2Fcodetime.dev%2Fv3%2Fusers%2Fshield%3Fuid%3D36830"></a>
   <a href="https://wakatime.com/badge/github/seguidodoblado/bloguero"><img src="https://wakatime.com/badge/github/seguidodoblado/bloguero.svg" alt="wakatime"></a>
 </p>
+
+## 🇪🇸 Español
 
 <p align="center">
   Cliente de escritorio para Blogger: gestiona tus entradas sin pasar por el navegador.
@@ -53,3 +53,40 @@ Bloguero no tiene servidor ni cuenta propios y no recoge datos. Qué se guarda, 
 ## Licencia
 
 Este proyecto se distribuye bajo la GNU General Public License, versión 3 o posterior (ver `COPYING`).
+
+---
+
+## 🇺🇸 English
+
+<p align="center"> 
+Blogger desktop client: manage your posts without going through the browser.
+</p>
+
+Desktop application (GTK 4 + PyGObject), for personal use: everything happens on your computer, with your own
+Google account and your own project in Google Cloud.
+
+- **Sign in with Google** (desktop OAuth) and choose from the blogs in your account.
+- **List and filter** entries by status: published, draft, scheduled.
+- **Create, edit, publish and delete** entries, and convert a published one to draft again.
+- **Rich editor (WYSIWYG)** native in GTK: bold, italic, underline, strikethrough, titles,
+lists, quote, code, links and text color — without depending on WebKit.
+- **Tags** and **post schedule** (date and time).
+- **Local cache and offline work**: List loads instantly from SQLite, changes without
+save are preserved even if you close the app, and if a post changed in Blogger while you were editing it
+You are warned before overwriting it.
+- **Interface in Spanish and English** (gettext), and **language and theme (light/dark) configurable** from
+Preferences, following the default system theme. The header menu gives access to
+Preferences and the standard GNOME About window.
+
+## Documentation
+
+All documentation—installation, user guide, technical specifications, troubleshooting, and more—is in
+the **[project wiki](https://github.com/seguidodoblado/bloguero/wiki)** (Spanish and English).
+
+## Privacy
+
+Bloguero has no server or account of its own and does not collect data. What is stored, where, and who it talks to is in the **[privacy policy](PRIVACY.md#-english)**.
+
+## License
+
+This project is distributed under the GNU General Public License, version 3 or later (see `COPYING`).
