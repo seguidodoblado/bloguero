@@ -5,6 +5,10 @@ en este archivo.
 
 ## [Unreleased]
 
+### Corregido
+
+- **Las tildes ya no quedan flotando en los campos de texto** (IBus 1.5.29 + GTK4 no confirmaba la tecla muerta): si la sesión usa `GTK_IM_MODULE=ibus`, la aplicación usa el método de entrada integrado de GTK. Contrapartida: dentro de Bloguero no funcionan los motores de IBus que componen caracteres (japonés, chino, coreano…). Cierra #20.
+
 ### Cambiado
 
 - **Documentos en doble idioma:** `CONTRIBUTING`, `PRIVACY`, `README`, `SECURITY` y `SUPPORT` pasan a ser un único fichero con español e inglés (como `CODE_OF_CONDUCT.md`) y desaparecen sus versiones `.en.md`. En el README, el logotipo y los badges van una sola vez.
