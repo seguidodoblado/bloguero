@@ -5,4 +5,4 @@ import os as _os
 if _os.environ.get("GTK_IM_MODULE") == "ibus":
     _os.environ["GTK_IM_MODULE"] = "simple"
 
-__version__ = "0.1.12"
+__version__ = "0.1.13"

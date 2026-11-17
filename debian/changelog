@@ -1,3 +1,12 @@
+bloguero (0.1.13-1) noble; urgency=medium
+
+  * Fix floating accents (dead keys) in text fields: with
+    GTK_IM_MODULE=ibus the application now uses GTK's built-in input
+    method (IBus 1.5.29 + GTK4 did not commit dead keys). Documentation:
+    single bilingual file for each repository document.
+
+ -- José Antonio Seguido Doblado <jose.antonio.seguido@gmail.com>  Tue, 17 Nov 2026 03:08:53 +0100
+
 bloguero (0.1.12-1) noble; urgency=medium
 
   * Fix synchronisation with more than 10 posts: the second page of

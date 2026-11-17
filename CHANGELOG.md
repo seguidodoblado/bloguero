@@ -5,6 +5,8 @@ en este archivo.
 
 ## [Unreleased]
 
+## [0.1.13] - 2026-11-17
+
 ### Corregido
 
 - **Las tildes ya no quedan flotando en los campos de texto** (IBus 1.5.29 + GTK4 no confirmaba la tecla muerta): si la sesión usa `GTK_IM_MODULE=ibus`, la aplicación usa el método de entrada integrado de GTK. Contrapartida: dentro de Bloguero no funcionan los motores de IBus que componen caracteres (japonés, chino, coreano…). Cierra #20.
